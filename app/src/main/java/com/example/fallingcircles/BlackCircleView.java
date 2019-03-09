@@ -26,10 +26,11 @@ public class BlackCircleView extends View {
         super.onDraw(canvas);
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
-        int x = getWidth();
-        int y = getHeight();
+        int x =(this.getWidth()/2);
+        int y = (this.getHeight()/2);
         int radius;
-        canvas.drawCircle(200, 200, 50, paint);
+
+        canvas.drawCircle(x, y, 50, paint);
         invalidate();
     }
 

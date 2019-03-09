@@ -25,7 +25,7 @@ public class WhiteCircleView extends View {
 
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        paint.setColor(Color.RED);
+        paint.setColor(Color.WHITE);
         for (Point p : points) {
             canvas.drawCircle(p.x, p.y, 30, paint);
         }
