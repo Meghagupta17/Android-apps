@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">WhiteBallGame</string>
+    <string name="score">Score:0</string>
+    <string name="pause">Pause</string>
+    <string name="start">Start</string>
+    <string name="lives">Lives:3</string>
+</resources>
