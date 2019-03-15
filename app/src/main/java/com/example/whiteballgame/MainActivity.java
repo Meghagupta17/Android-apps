@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        View animationArea = new AnimationArea(this);
         setContentView(R.layout.activity_main);
 
         tvScore = findViewById(R.id.tvScore);
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         btnStart = findViewById(R.id.btnStart);
         startBtnState = 'S';
         pauseBtnState = 'P';
+        btnPause.setText("PAUSE");
+        btnStart.setText("START");
 
         btnPause.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
                     //To pause animation
                 }else {
                    pauseBtnState='P';
+                   btnPause.setText("PAUSE");
                    //To Resume the animation
                 }
             }
@@ -57,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
                 } else {
                     startBtnState='S';
+                    btnStart.setText("START");
                     //To Start the animation
                 }
             }
