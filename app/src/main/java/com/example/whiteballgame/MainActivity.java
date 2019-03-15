@@ -14,22 +14,28 @@ public class MainActivity extends AppCompatActivity {
     Button btnPause;
     char startBtnState;
     char pauseBtnState;
-
+    int life;
+    int score;
+    AnimationArea animationArea;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        View animationArea = new AnimationArea(this);
         setContentView(R.layout.activity_main);
+        animationArea = new AnimationArea(this);
 
         tvScore = findViewById(R.id.tvScore);
         tvLives = findViewById(R.id.tvLives);
         btnPause = findViewById(R.id.btnPause);
         btnStart = findViewById(R.id.btnStart);
-        startBtnState = 'S';
+        startBtnState = 'N';
         pauseBtnState = 'P';
         btnPause.setText("PAUSE");
         btnStart.setText("START");
+        score = 0;
+        life = 3;
+        tvScore.setText("Score: "+ score);
+        tvLives.setText("Lives: "+ life);
 
         btnPause.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,10 +44,12 @@ public class MainActivity extends AppCompatActivity {
                     btnPause.setText("RESUME");
                     pauseBtnState = 'R';
                     //To pause animation
+                    (animationArea).pauseAnimation();
                 }else {
                    pauseBtnState='P';
                    btnPause.setText("PAUSE");
                    //To Resume the animation
+                    (animationArea).startAnimation();
                 }
             }
         });
@@ -49,20 +57,26 @@ public class MainActivity extends AppCompatActivity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (startBtnState=='S') {
+                if (startBtnState=='N') {
                     btnStart.setText("END");
-                    startBtnState = 'E';
-                    //To End the animation
+                    startBtnState = 'S';
+                    //To Start the animation
+                    (animationArea).startAnimation();
 
-                } else if (startBtnState == 'E') {
+                } else if (startBtnState == 'S') {
                     btnStart.setText("NEW");
-                    startBtnState = 'N';
-                    //To start new animation
+                    startBtnState = 'E';
+                    //To End the new animation
+                    (animationArea).pauseAnimation();
+                    btnPause.setEnabled(false);
 
                 } else {
-                    startBtnState='S';
+                    startBtnState='N';
                     btnStart.setText("START");
-                    //To Start the animation
+                    //Balls should vanished and score =0 , lives = 3
+                    ((AnimationArea) animationArea).newGame();
+                    score = 0;
+                    life = 3;
                 }
             }
         });

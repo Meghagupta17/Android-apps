@@ -27,7 +27,6 @@ public class AnimationArea extends View {
         super(context);
         refContext= context;
         flagPause =true;
-
     }
 
     public AnimationArea(Context context, AttributeSet attrs){
@@ -90,6 +89,18 @@ public class AnimationArea extends View {
         startTime = 0;
         endTime = 0;
         return true;
+    }
 
+    public void pauseAnimation(){
+        flagPause = true;
+    }
+
+    public void startAnimation(){
+        flagPause = false;
+    }
+
+    public void newGame(){
+        whiteBallsList = new ArrayList<WhiteBalls>();
+        initializedBlackBall();
     }
 }
