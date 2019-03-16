@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     int life;
     int score;
     AnimationArea animationArea;
+    AnimationInterface animationInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +32,16 @@ public class MainActivity extends AppCompatActivity {
         startBtnState = 'N';
         pauseBtnState = 'P';
         btnPause.setText("PAUSE");
+        btnPause.setEnabled(false);
         btnStart.setText("START");
         score = 0;
         life = 3;
         tvScore.setText("Score: "+ score);
         tvLives.setText("Lives: "+ life);
+
+        //animationInterface = new AnimationInterface() {
+
+        //};
 
         btnPause.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,12 +50,12 @@ public class MainActivity extends AppCompatActivity {
                     btnPause.setText("RESUME");
                     pauseBtnState = 'R';
                     //To pause animation
-                    (animationArea).pauseAnimation();
+                    animationArea.pauseAnimation();
                 }else {
                    pauseBtnState='P';
                    btnPause.setText("PAUSE");
                    //To Resume the animation
-                    (animationArea).startAnimation();
+                    animationArea.startAnimation();
                 }
             }
         });
@@ -61,20 +67,21 @@ public class MainActivity extends AppCompatActivity {
                     btnStart.setText("END");
                     startBtnState = 'S';
                     //To Start the animation
-                    (animationArea).startAnimation();
+                    animationArea.startAnimation();
+                    btnPause.setEnabled(true);
 
                 } else if (startBtnState == 'S') {
                     btnStart.setText("NEW");
                     startBtnState = 'E';
                     //To End the new animation
-                    (animationArea).pauseAnimation();
+                    animationArea.pauseAnimation();
                     btnPause.setEnabled(false);
 
                 } else {
                     startBtnState='N';
                     btnStart.setText("START");
                     //Balls should vanished and score =0 , lives = 3
-                    ((AnimationArea) animationArea).newGame();
+                    animationArea.newGame();
                     score = 0;
                     life = 3;
                 }
