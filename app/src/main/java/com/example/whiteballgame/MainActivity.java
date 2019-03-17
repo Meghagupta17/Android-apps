@@ -5,8 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AnimationArea.ChangeLifeScore {
 
     TextView tvScore;
     TextView tvLives;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        animationArea = new AnimationArea(this);
+        animationArea = findViewById(R.id.animation);
 
         tvScore = findViewById(R.id.tvScore);
         tvLives = findViewById(R.id.tvLives);
@@ -38,10 +39,6 @@ public class MainActivity extends AppCompatActivity {
         life = 3;
         tvScore.setText("Score: "+ score);
         tvLives.setText("Lives: "+ life);
-
-        //animationInterface = new AnimationInterface() {
-
-        //};
 
         btnPause.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                     startBtnState = 'S';
                     //To Start the animation
                     animationArea.startAnimation();
+                    animationArea.changeStartState();
                     btnPause.setEnabled(true);
 
                 } else if (startBtnState == 'S') {
@@ -84,9 +82,38 @@ public class MainActivity extends AppCompatActivity {
                     animationArea.newGame();
                     score = 0;
                     life = 3;
+                    tvScore.setText("Score: "+ score);
+                    tvLives.setText("Lives: "+ life);
+                    pauseBtnState = 'P';
+                    btnPause.setText("PAUSE");
+                    btnPause.setEnabled(false);
                 }
             }
         });
+    }
 
+    @Override
+    public void changeLife() {
+        life--;
+        Toast.makeText(MainActivity.this, ""+life, Toast.LENGTH_LONG).show();
+        tvLives.setText("Lives: "+ life);
+        if(life==0){
+            startBtnState = 'N';
+            pauseBtnState = 'P';
+            btnPause.setText("PAUSE");
+            btnPause.setEnabled(false);
+            btnStart.setText("START");
+            score = 0;
+            life = 3;
+            tvScore.setText("Score: "+ score);
+            tvLives.setText("Lives: "+ life);
+            animationArea.newGame();
+        }
+    }
+
+    @Override
+    public void changeScore(int score) {
+        this.score = this.score+score;
+        tvScore.setText("Score: "+ score);
     }
 }

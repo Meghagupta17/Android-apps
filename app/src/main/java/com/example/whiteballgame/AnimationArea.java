@@ -14,10 +14,16 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AnimationArea extends View implements AnimationInterface{
+public class AnimationArea extends View{
+
+    public interface ChangeLifeScore{
+        public void changeLife();
+
+        public void changeScore(int score);
+    }
 
     private Paint paint = new Paint();
-    List<WhiteBalls> whiteBallsList = new ArrayList<WhiteBalls>();
+    List<WhiteBalls> whiteBallsList;
     Balls blackBall = new Balls();
     private long startTime=0;
     private long endTime=0;
@@ -25,19 +31,28 @@ public class AnimationArea extends View implements AnimationInterface{
     Boolean flagPause;
     double distance;
     Boolean flagStartState;
+    ChangeLifeScore changeLifeScore;
 
     public AnimationArea(Context context) {
         super(context);
         refContext= context;
-        flagPause =false; // should be true, false done for testing purpose only
-        flagStartState = true; // it should be false, true only for testing purpose
+        flagPause =true; // should be true, false done for testing purpose only
+        flagStartState = false; // it should be false, true only for testing purpose
+        changeLifeScore = (ChangeLifeScore) context;
+        startTime = 0;
+        endTime = 0;
+        whiteBallsList = new ArrayList<>();
     }
 
     public AnimationArea(Context context, AttributeSet attrs){
         super(context, attrs);
         refContext=context;
-        flagPause =false; // should be true, false done for testing purpose only
-        flagStartState = true;// it should be false, true only for testing purpose
+        flagPause =true; // should be true, false done for testing purpose only
+        flagStartState = false;// it should be false, true only for testing purpose
+        changeLifeScore = (ChangeLifeScore) context;
+        startTime = 0;
+        endTime = 0;
+        whiteBallsList = new ArrayList<>();
     }
 
     @Override
@@ -58,12 +73,14 @@ public class AnimationArea extends View implements AnimationInterface{
                 whiteBall.speed =(int)(whiteBall.speed*1.25);
                 whiteBall.score = whiteBall.score+1;
                 //increment the score in main activity
+                changeLifeScore.changeScore(whiteBall.score);
             }
             canvas.drawCircle(whiteBall.x, whiteBall.y, whiteBall.radius, paint);
 
             distance = Math.sqrt((whiteBall.x-blackBall.x)*(whiteBall.x-blackBall.x) + (whiteBall.y-blackBall.y)*(whiteBall.y-blackBall.y));
             if (distance<whiteBall.radius+blackBall.radius){
-                //tvlife.setText("2"); the life should decrease by 1
+                whiteBall.y = whiteBall.radius;
+                changeLifeScore.changeLife();
             }
         }
         invalidate();
@@ -99,7 +116,7 @@ public class AnimationArea extends View implements AnimationInterface{
                     whiteBallsList.add(whiteBalls);
                 }
 
-            case MotionEvent.ACTION_MOVE:// a pointer was moved
+            case MotionEvent.ACTION_MOVE:
             case MotionEvent.ACTION_UP:
                 endTime = System.currentTimeMillis();
             case MotionEvent.ACTION_CANCEL: {
@@ -111,19 +128,22 @@ public class AnimationArea extends View implements AnimationInterface{
         return true;
     }
 
-    @Override
     public void pauseAnimation(){
         flagPause = true;
     }
 
-    @Override
     public void startAnimation(){
         flagPause = false;
     }
 
-    @Override
     public void newGame(){
         whiteBallsList = new ArrayList<WhiteBalls>();
         initializedBlackBall();
+        flagStartState =false;
+        flagPause = true;
+    }
+
+    public void changeStartState(){
+        flagStartState = true;
     }
 }
