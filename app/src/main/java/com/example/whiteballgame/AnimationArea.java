@@ -61,17 +61,18 @@ public class AnimationArea extends View{
         canvas.drawARGB(100, 0, 0, 0);
         paint.setColor(Color.BLACK);
         initializedBlackBall();
-        //canvas.translate(getWidth()/2f,getHeight()/2f);
         canvas.drawCircle(blackBall.x, blackBall.y, blackBall.radius, paint);
+
         paint.setColor(Color.WHITE);
         for (WhiteBalls whiteBall : whiteBallsList) {
             if(whiteBall.y<canvas.getHeight()){
                 if(!flagPause)
                     whiteBall.y=whiteBall.y+whiteBall.speed;
+
             }else{
                 whiteBall.y = whiteBall.radius;
                 whiteBall.speed =(int)(whiteBall.speed*1.25);
-                whiteBall.score = whiteBall.score+1;
+                whiteBall.score = whiteBall.score++;// whiteBall.score = whiteBall.score+1; original changed coz it was adding 2scores for each ball in first round
                 //increment the score in main activity
                 changeLifeScore.changeScore(whiteBall.score);
             }
@@ -101,16 +102,16 @@ public class AnimationArea extends View{
                 if(flagStartState){
                     int x = (int) event.getX();
                     if (x<this.getWidth()/2){
-                        blackBall.x=blackBall.x-11;
+                        blackBall.x=blackBall.x-30;
                     }else{
-                        blackBall.x=blackBall.x+11;
+                        blackBall.x=blackBall.x+30;
                     }
 
                 }else {
                     WhiteBalls whiteBalls =new WhiteBalls();
                     whiteBalls.x = (int) event.getX();
                     whiteBalls.y = (int) event.getY();;
-                    whiteBalls.radius = 50;//(int) ((endTime-startTime)/50);
+                    whiteBalls.radius =  50;//(int) ((endTime-startTime)/50);
                     whiteBalls.speed= 4;
                     whiteBalls.score=1;
                     whiteBallsList.add(whiteBalls);

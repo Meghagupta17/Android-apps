@@ -74,6 +74,9 @@ public class MainActivity extends AppCompatActivity implements AnimationArea.Cha
                     //To End the new animation
                     animationArea.pauseAnimation();
                     btnPause.setEnabled(false);
+                    Toast.makeText(MainActivity.this, "Game Over", Toast.LENGTH_LONG).show();
+                    life = 3;
+                    score = 0;
 
                 } else {
                     startBtnState='N';
@@ -90,21 +93,22 @@ public class MainActivity extends AppCompatActivity implements AnimationArea.Cha
                 }
             }
         });
-    }
+            }
 
     @Override
     public void changeLife() {
         life--;
-        Toast.makeText(MainActivity.this, ""+life, Toast.LENGTH_LONG).show();
         tvLives.setText("Lives: "+ life);
+
         if(life==0){
-            startBtnState = 'N';
+            Toast.makeText(MainActivity.this, "Game Over", Toast.LENGTH_LONG).show(); //new addition
+            startBtnState = 'E';// changes N to E
             pauseBtnState = 'P';
             btnPause.setText("PAUSE");
             btnPause.setEnabled(false);
-            btnStart.setText("START");
-            score = 0;
-            life = 3;
+            btnStart.setText("NEW");// chnaged strat to new because when game ends we want new button
+            //score = 0;// commented cause at the end of the game wanna show actual score
+            //life = 3;// comment because when game ends wanna show lives 0
             tvScore.setText("Score: "+ score);
             tvLives.setText("Lives: "+ life);
             animationArea.newGame();
@@ -113,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements AnimationArea.Cha
 
     @Override
     public void changeScore(int score) {
-        this.score = this.score+score;
+        this.score = this.score + score;
         tvScore.setText("Score: "+ score);
     }
 }
