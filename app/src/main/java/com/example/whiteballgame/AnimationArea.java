@@ -4,11 +4,9 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Point;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -32,6 +30,7 @@ public class AnimationArea extends View{
     double distance;
     Boolean flagStartState;
     ChangeLifeScore changeLifeScore;
+    boolean first;
 
     public AnimationArea(Context context) {
         super(context);
@@ -39,9 +38,8 @@ public class AnimationArea extends View{
         flagPause =true; // should be true, false done for testing purpose only
         flagStartState = false; // it should be false, true only for testing purpose
         changeLifeScore = (ChangeLifeScore) context;
-        startTime = 0;
-        endTime = 0;
         whiteBallsList = new ArrayList<>();
+        first = true;
     }
 
     public AnimationArea(Context context, AttributeSet attrs){
@@ -53,6 +51,7 @@ public class AnimationArea extends View{
         startTime = 0;
         endTime = 0;
         whiteBallsList = new ArrayList<>();
+        first = true;
     }
 
     @Override
@@ -60,29 +59,34 @@ public class AnimationArea extends View{
         super.onDraw(canvas);
         canvas.drawARGB(100, 0, 0, 0);
         paint.setColor(Color.BLACK);
-        initializedBlackBall();
+
+        if (first){
+            initializedBlackBall();
+            first =false;
+        }
         canvas.drawCircle(blackBall.x, blackBall.y, blackBall.radius, paint);
 
         paint.setColor(Color.WHITE);
         for (WhiteBalls whiteBall : whiteBallsList) {
             if(whiteBall.y<canvas.getHeight()){
-                if(!flagPause)
-                    whiteBall.y=whiteBall.y+whiteBall.speed;
+                if(!flagPause) {
+                    whiteBall.y = whiteBall.y + whiteBall.speed;
+                    distance = Math.sqrt((whiteBall.x - blackBall.x) * (whiteBall.x - blackBall.x) + (whiteBall.y - blackBall.y) * (whiteBall.y - blackBall.y));
+                    if (distance < whiteBall.radius + blackBall.radius) {
+                        whiteBall.y = whiteBall.radius;
+                        changeLifeScore.changeLife();
+                    }
+                }
 
             }else{
                 whiteBall.y = whiteBall.radius;
                 whiteBall.speed =(int)(whiteBall.speed*1.25);
-                whiteBall.score = whiteBall.score++;// whiteBall.score = whiteBall.score+1; original changed coz it was adding 2scores for each ball in first round
+                whiteBall.score++;// whiteBall.score = whiteBall.score+1; original changed coz it was adding 2scores for each ball in first round
                 //increment the score in main activity
                 changeLifeScore.changeScore(whiteBall.score);
             }
             canvas.drawCircle(whiteBall.x, whiteBall.y, whiteBall.radius, paint);
 
-            distance = Math.sqrt((whiteBall.x-blackBall.x)*(whiteBall.x-blackBall.x) + (whiteBall.y-blackBall.y)*(whiteBall.y-blackBall.y));
-            if (distance<whiteBall.radius+blackBall.radius){
-                whiteBall.y = whiteBall.radius;
-                changeLifeScore.changeLife();
-            }
         }
         invalidate();
     }
@@ -99,24 +103,6 @@ public class AnimationArea extends View{
             case MotionEvent.ACTION_DOWN:
                 startTime = System.currentTimeMillis();
 
-                if(flagStartState){
-                    int x = (int) event.getX();
-                    if (x<this.getWidth()/2){
-                        blackBall.x=blackBall.x-30;
-                    }else{
-                        blackBall.x=blackBall.x+30;
-                    }
-
-                }else {
-                    WhiteBalls whiteBalls =new WhiteBalls();
-                    whiteBalls.x = (int) event.getX();
-                    whiteBalls.y = (int) event.getY();;
-                    whiteBalls.radius =  50;//(int) ((endTime-startTime)/50);
-                    whiteBalls.speed= 4;
-                    whiteBalls.score=1;
-                    whiteBallsList.add(whiteBalls);
-                }
-
             case MotionEvent.ACTION_MOVE:
             case MotionEvent.ACTION_UP:
                 endTime = System.currentTimeMillis();
@@ -124,8 +110,27 @@ public class AnimationArea extends View{
                 break;
             }
         }
-        startTime = 0;
-        endTime = 0;
+
+        long timeDiff = event.getEventTime()-event.getDownTime();
+
+        if(flagStartState){
+            int x = (int) event.getX();
+            if (x<this.getWidth()/2){
+                blackBall.x=blackBall.x-10;
+            }else{
+                blackBall.x=blackBall.x+10;
+            }
+
+        }else {
+            WhiteBalls whiteBalls =new WhiteBalls();
+            whiteBalls.x = (int) event.getX();
+            whiteBalls.y = (int) event.getY();;
+            whiteBalls.radius = (int) timeDiff/30;
+            whiteBalls.speed= 4;
+            whiteBalls.score=0;
+            whiteBallsList.add(whiteBalls);
+        }
+
         return true;
     }
 

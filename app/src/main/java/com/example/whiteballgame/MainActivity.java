@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements AnimationArea.Cha
         life = 3;
         tvScore.setText("Score: "+ score);
         tvLives.setText("Lives: "+ life);
+        animationArea.initializedBlackBall();
 
         btnPause.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,8 +117,8 @@ public class MainActivity extends AppCompatActivity implements AnimationArea.Cha
     }
 
     @Override
-    public void changeScore(int score) {
-        this.score = this.score + score;
-        tvScore.setText("Score: "+ score);
+    public void changeScore(int scoreInc) {
+        score = score + scoreInc;
+        tvScore.setText("Score: "+ score/2);
     }
 }
