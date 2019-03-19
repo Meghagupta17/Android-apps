@@ -7,7 +7,6 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,16 +14,14 @@ import java.util.List;
 public class AnimationArea extends View{
 
     public interface ChangeLifeScore{
-        public void changeLife();
+        void changeLife();
 
-        public void changeScore(int score);
+        void changeScore(int score);
     }
 
     private Paint paint = new Paint();
     List<WhiteBalls> whiteBallsList;
     Balls blackBall = new Balls();
-    private long startTime=0;
-    private long endTime=0;
     Context refContext;
     Boolean flagPause;
     double distance;
@@ -35,8 +32,8 @@ public class AnimationArea extends View{
     public AnimationArea(Context context) {
         super(context);
         refContext= context;
-        flagPause =true; // should be true, false done for testing purpose only
-        flagStartState = false; // it should be false, true only for testing purpose
+        flagPause =true;
+        flagStartState = false;
         changeLifeScore = (ChangeLifeScore) context;
         whiteBallsList = new ArrayList<>();
         first = true;
@@ -45,11 +42,9 @@ public class AnimationArea extends View{
     public AnimationArea(Context context, AttributeSet attrs){
         super(context, attrs);
         refContext=context;
-        flagPause =true; // should be true, false done for testing purpose only
-        flagStartState = false;// it should be false, true only for testing purpose
+        flagPause =true;
+        flagStartState = false;
         changeLifeScore = (ChangeLifeScore) context;
-        startTime = 0;
-        endTime = 0;
         whiteBallsList = new ArrayList<>();
         first = true;
     }
@@ -68,7 +63,7 @@ public class AnimationArea extends View{
 
         paint.setColor(Color.WHITE);
         for (WhiteBalls whiteBall : whiteBallsList) {
-            if(whiteBall.y<canvas.getHeight()){
+            if(whiteBall.y<getHeight()){
                 if(!flagPause) {
                     whiteBall.y = whiteBall.y + whiteBall.speed;
                     distance = Math.sqrt((whiteBall.x - blackBall.x) * (whiteBall.x - blackBall.x) + (whiteBall.y - blackBall.y) * (whiteBall.y - blackBall.y));
@@ -81,7 +76,7 @@ public class AnimationArea extends View{
             }else{
                 whiteBall.y = whiteBall.radius;
                 whiteBall.speed =(int)(whiteBall.speed*1.25);
-                whiteBall.score++;// whiteBall.score = whiteBall.score+1; original changed coz it was adding 2scores for each ball in first round
+                whiteBall.score++;
                 //increment the score in main activity
                 changeLifeScore.changeScore(whiteBall.score);
             }
@@ -101,11 +96,8 @@ public class AnimationArea extends View{
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                startTime = System.currentTimeMillis();
-
             case MotionEvent.ACTION_MOVE:
             case MotionEvent.ACTION_UP:
-                endTime = System.currentTimeMillis();
             case MotionEvent.ACTION_CANCEL: {
                 break;
             }
@@ -116,16 +108,16 @@ public class AnimationArea extends View{
         if(flagStartState){
             int x = (int) event.getX();
             if (x<this.getWidth()/2){
-                blackBall.x=blackBall.x-10;
+                blackBall.x=blackBall.x-20;
             }else{
-                blackBall.x=blackBall.x+10;
+                blackBall.x=blackBall.x+20;
             }
 
         }else {
             WhiteBalls whiteBalls =new WhiteBalls();
             whiteBalls.x = (int) event.getX();
-            whiteBalls.y = (int) event.getY();;
-            whiteBalls.radius = (int) timeDiff/30;
+            whiteBalls.y = (int) event.getY();
+            whiteBalls.radius = (int) timeDiff/20;
             whiteBalls.speed= 4;
             whiteBalls.score=0;
             whiteBallsList.add(whiteBalls);

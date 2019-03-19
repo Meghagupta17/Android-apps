@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements AnimationArea.Cha
                 }
             }
         });
-            }
+    }
 
     @Override
     public void changeLife() {
@@ -103,13 +103,11 @@ public class MainActivity extends AppCompatActivity implements AnimationArea.Cha
 
         if(life==0){
             Toast.makeText(MainActivity.this, "Game Over", Toast.LENGTH_LONG).show(); //new addition
-            startBtnState = 'E';// changes N to E
+            startBtnState = 'E';//
             pauseBtnState = 'P';
             btnPause.setText("PAUSE");
             btnPause.setEnabled(false);
-            btnStart.setText("NEW");// chnaged strat to new because when game ends we want new button
-            //score = 0;// commented cause at the end of the game wanna show actual score
-            //life = 3;// comment because when game ends wanna show lives 0
+            btnStart.setText("NEW");
             tvScore.setText("Score: "+ score);
             tvLives.setText("Lives: "+ life);
             animationArea.newGame();
