@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">keepSake</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="newuser">New User? Sign up here</string>
+    <string name="signinbtn">SignIn</string>
+    <string name="passwordhint">Enter your Password</string>
+    <string name="emailhint">Enter your Email Id</string>
+    <string name="signup">SignUp</string>
+    <string name="alreadyuser">Already have an account? Sign in</string>
+    <string name="passwordhints">Enter your Password</string>
+    <string name="emailidhint">Enter your Email Id</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+</resources>

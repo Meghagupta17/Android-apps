@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_intro"
+            android:title="Intrducing Me"/>
+
+        <item android:id="@+id/nav_arrival"
+            android:title="My Big Arrival"/>
+
+        <item android:id="@+id/nav_theDay"
+            android:title="The world areound Me"/>
+
+        <item android:id="@+id/nav_grow"
+            android:title="Watch Me Grow"/>
+
+        <item android:id="@+id/nav_myfirsts"
+            android:title="My Famous Firsts"/>
+
+        <item android:id="@+id/nav_monthlypic"
+            android:title="My Monthly Pic"/>
+
+        <item android:id="@+id/nav_familyPic"
+            android:title="My First Pic With Family"/>
+
+    </group>
+
+</menu>

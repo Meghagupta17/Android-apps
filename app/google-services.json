@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "26915841375",
+    "firebase_url": "https://keepsake-ffd69.firebaseio.com",
+    "project_id": "keepsake-ffd69",
+    "storage_bucket": "keepsake-ffd69.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26915841375:android:a838716db1e8bdea",
+        "android_client_info": {
+          "package_name": "com.example.keepsake"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26915841375-tv1sc39t9lecffnp6iob7bke2o6gb29v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.keepsake",
+            "certificate_hash": "3ec206af2b2ef4d7e7a96c271636c2bc52d7ddc2"
+          }
+        },
+        {
+          "client_id": "26915841375-6qmrv4o5bgl907gs8oq2992210pr08b1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoqskRxz_oSqb_awtmn-67zDApDRWHGeY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26915841375-6qmrv4o5bgl907gs8oq2992210pr08b1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
