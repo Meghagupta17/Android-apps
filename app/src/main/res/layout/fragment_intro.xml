@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_light">
+    android:orientation="vertical"
+    android:background="#FFDAB9">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Intro Fragment"
+        android:text="Introducing me"
         android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+        android:textStyle="italic"
+        android:textColor="#1E90FF"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"/>
 
-</RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:padding="16dp"
+        />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="name"
+        android:inputType="text"
+        android:textStyle="italic"
+        android:padding="16dp"/>
+
+    <EditText
+        android:id="@+id/dob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="born on"
+        android:inputType="text"
+        android:textStyle="italic"
+        android:padding="16dp"/>
+
+    <EditText
+        android:id="@+id/weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="weight"
+        android:inputType="text"
+        android:textStyle="italic"
+        android:padding="16dp"/>
+
+    <EditText
+        android:id="@+id/height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="height"
+        android:inputType="text"
+        android:textStyle="italic"
+        android:padding="16dp"/>
+</LinearLayout>

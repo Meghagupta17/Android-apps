@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
+    android:background="#FFC0CB"
     android:fitsSystemWindows="true"
     tools:context=".NavigationActivity"
     tools:openDrawer="start">
@@ -40,6 +41,44 @@
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/drawer_menu">
     </android.support.design.widget.NavigationView>
+
+    <!--<ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/welcome" />-->
+
+    <!--<RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/myImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/welcome" />
+
+        <TextView
+            android:id="@+id/myImageViewText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/myImageView"
+            android:layout_alignTop="@+id/myImageView"
+            android:layout_alignRight="@+id/myImageView"
+            android:layout_alignBottom="@+id/myImageView"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="0dp"
+            android:gravity="bottom"
+            android:text="keepSake to keep Memories safe"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:textAlignment="center"/>
+    </RelativeLayout>-->
+
 
 
 

@@ -1,6 +1,7 @@
 package com.example.keepsake;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -31,13 +32,12 @@ import java.util.concurrent.Executor;
 
 public class SignUp extends Fragment implements View.OnClickListener {
 
-    private static final String SignUp = "signUp";
-    //private EditText username;
+    //private static final String SignUp = "signUp";
+
     private EditText email;
     private EditText password;
     private Button btnSignup;
     private TextView signinText;
-    private static final String TAG = "myApp";
 
     private FirebaseAuth firebaseAuth;
 
@@ -49,11 +49,16 @@ public class SignUp extends Fragment implements View.OnClickListener {
         FirebaseApp.initializeApp(getActivity());
         firebaseAuth = FirebaseAuth.getInstance();
 
-        //username = view.findViewById(R.id.username);
-        email = (EditText) view.findViewById(R.id.email);
-        password = (EditText) view.findViewById(R.id.password);
-        btnSignup =(Button)view.findViewById(R.id.btnSignup);
-        signinText = (TextView) view.findViewById(R.id.signinText);
+        if (firebaseAuth.getCurrentUser() != null){
+            getActivity().finish();
+            Intent intent = new Intent(getActivity(), NavigationActivity.class);
+            startActivity(intent);
+        }
+
+        email = view.findViewById(R.id.email);
+        password = view.findViewById(R.id.password);
+        btnSignup = view.findViewById(R.id.btnSignup);
+        signinText = view.findViewById(R.id.signinText);
 
         btnSignup.setOnClickListener(this);
         signinText.setOnClickListener(this);
@@ -62,14 +67,9 @@ public class SignUp extends Fragment implements View.OnClickListener {
     }
 
     private void SignupUser() {
-        //String s1 = username.getText().toString().trim();
+
        String s1 = email.getText().toString().trim();
        String s2 = password.getText().toString().trim();
-
-        /*if(TextUtils.isEmpty(s1)){
-            Toast.makeText(getActivity(), "Please enter User Name", Toast.LENGTH_SHORT).show();
-            return;
-        }*/
 
         if (TextUtils.isEmpty(s1)){
             Toast.makeText(getActivity(), "Please enter Email Id", Toast.LENGTH_SHORT).show();
@@ -81,30 +81,16 @@ public class SignUp extends Fragment implements View.OnClickListener {
             return;
         }
 
-        /*firebaseAuth.createUserWithEmailAndPassword(s1, s2)
-                .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            //user Registered successfully
-                            Toast.makeText(getActivity(), "Registration Successfully", Toast.LENGTH_SHORT).show();
-                            FirebaseUser user = firebaseAuth.getCurrentUser();
-                        }else {
-                            Toast.makeText(getActivity(), "Could not register, please try again", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });*/
-
         firebaseAuth.createUserWithEmailAndPassword(s1, s2)
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "createUserWithEmail:success");
-                            Toast.makeText(getActivity(), "Registration Successfully", Toast.LENGTH_SHORT).show();
                             FirebaseUser user = firebaseAuth.getCurrentUser();
-                            //updateUI(user);
+                            Toast.makeText(getActivity(), "Registration Successfully", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getActivity(), NavigationActivity.class);
+                            startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(getActivity(), "Authentication failed.", Toast.LENGTH_SHORT).show();
@@ -122,17 +108,12 @@ public class SignUp extends Fragment implements View.OnClickListener {
 
         if (view == signinText){
             //change fragment to signin
-            FragmentTransaction fr = getFragmentManager().beginTransaction();
-            SignIn signIn = new SignIn();
-            fr.replace(R.id.signin_container, signIn);
-            fr.commit();
-
-            /*Fragment fragment = new Fragment();
-            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+            FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.signin_container, fragment);
+            SignIn signin = new SignIn();
+            fragmentTransaction.replace(R.id.signin_container, signin);
             fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();*/
+            fragmentTransaction.commit();
         }
     }
 }

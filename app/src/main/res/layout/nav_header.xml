@@ -17,4 +17,14 @@
         android:textSize="23sp"
         android:textColor="@color/colorPrimaryDark"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:id="@+id/userEmail"
+        android:text="@string/useremail"
+        android:gravity="center"
+        android:textSize="23sp"
+        android:textColor="@color/colorPrimaryDark"/>
+
 </LinearLayout>

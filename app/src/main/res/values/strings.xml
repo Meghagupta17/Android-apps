@@ -12,4 +12,7 @@
     <string name="emailidhint">Enter your Email Id</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="useremail">User Email id</string>
+    <string name="welcome">Welcome</string>
+    <string name="ff_welcome"><![CDATA[Friends & Family who were there to welcome me]]></string>
 </resources>

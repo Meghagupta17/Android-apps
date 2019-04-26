@@ -6,9 +6,6 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
-    private SignIn signIn;
-    private SignUp signUp;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,8 +15,8 @@ public class MainActivity extends AppCompatActivity {
         SignUp signUp= new SignUp();
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.signin_container, signIn);
-        fragmentTransaction.add(R.id.signup_container, signUp);
+        fragmentTransaction.add(R.id.signup_container, signIn);
+        fragmentTransaction.add(R.id.signin_container, signUp);
         fragmentTransaction.commit();
     }
 }

@@ -1,14 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_light">
+    android:orientation="vertical"
+    android:background="#FFFF99">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="The Day Fragment"
+        android:text="The world around me"
         android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+        android:textStyle="italic"
+        android:textColor="#1E90FF"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"/>
 
-</RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:padding="16dp" />
+
+    <EditText
+        android:id="@+id/leader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="National leader"
+        android:inputType="text"
+        android:textStyle="italic"
+        android:padding="16dp"/>
+
+    <EditText
+        android:id="@+id/headline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="headline on the day I was born"
+        android:inputType="text"
+        android:textStyle="italic"
+        android:padding="16dp"/>
+
+    <EditText
+        android:id="@+id/milkCost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Cost of gallon of milk"
+        android:inputType="text"
+        android:textStyle="italic"
+        android:padding="16dp"/>
+
+    <EditText
+        android:id="@+id/diaperCost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Cost of package of diapers"
+        android:inputType="text"
+        android:textStyle="italic"
+        android:padding="16dp"/>
+
+
+</LinearLayout>
