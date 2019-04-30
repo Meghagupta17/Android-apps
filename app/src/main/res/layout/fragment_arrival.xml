@@ -18,7 +18,9 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:padding="16dp" />
+        android:padding="16dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_launcher"/>
 
     <EditText
         android:id="@+id/dobTime"
@@ -59,6 +61,15 @@
         android:inputType="text"
         android:textStyle="italic"
         android:padding="16dp"/>
+
+    <Button
+        android:id="@+id/btnSavearrival"
+        android:text="@string/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_marginTop="16dp"/>
 
 
 </LinearLayout>

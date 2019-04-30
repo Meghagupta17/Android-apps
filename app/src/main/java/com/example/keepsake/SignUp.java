@@ -1,21 +1,15 @@
 package com.example.keepsake;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,13 +20,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.util.Objects;
-import java.util.concurrent.Executor;
-
 
 public class SignUp extends Fragment implements View.OnClickListener {
 
-    //private static final String SignUp = "signUp";
+    private static final String SignUp = "signUp";
 
     private EditText email;
     private EditText password;
@@ -40,6 +31,11 @@ public class SignUp extends Fragment implements View.OnClickListener {
     private TextView signinText;
 
     private FirebaseAuth firebaseAuth;
+
+    public interface GoToSignIn{
+        public void signInSwitch();
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -108,12 +104,8 @@ public class SignUp extends Fragment implements View.OnClickListener {
 
         if (view == signinText){
             //change fragment to signin
-            FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            SignIn signin = new SignIn();
-            fragmentTransaction.replace(R.id.signin_container, signin);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
+            GoToSignIn goToSignIn = (GoToSignIn) getActivity();
+            goToSignIn.signInSwitch();
         }
     }
 }

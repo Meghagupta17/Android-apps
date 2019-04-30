@@ -1,13 +1,9 @@
 package com.example.keepsake;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,14 +24,18 @@ import com.google.firebase.auth.FirebaseUser;
 public class SignIn extends Fragment implements View.OnClickListener {
 
 
-        private static final String SignIn = "signIn";
-        private EditText email;
-        private EditText password;
-        private Button btnSignin;
-        private TextView signuptext;
+    private static final String SignIn = "signIn";
+    private EditText email;
+    private EditText password;
+    private Button btnSignin;
+    private TextView signuptext;
 
     private FirebaseAuth firebaseAuth;
 
+
+    public interface GoToSignUp{
+        public void signUpSwitch();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,9 +44,10 @@ public class SignIn extends Fragment implements View.OnClickListener {
 
         FirebaseApp.initializeApp(getActivity());
         firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = firebaseAuth.getCurrentUser();
 
         if (firebaseAuth.getCurrentUser() != null){
-            //getActivity().finish();
+            getActivity().finish();
             Intent intent = new Intent(getActivity(), NavigationActivity.class);
             startActivity(intent);
         }
@@ -68,24 +69,32 @@ public class SignIn extends Fragment implements View.OnClickListener {
         String s2 = password.getText().toString().trim();
 
         if (TextUtils.isEmpty(s1)){
-            Toast.makeText(getActivity(), "Please enter Email Id", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), getString(R.string.enter_email), Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (TextUtils.isEmpty(s2)){
-            Toast.makeText(getActivity(), "Please enter Password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), getString(R.string.enter_password), Toast.LENGTH_SHORT).show();
             return;
         }
 
-        firebaseAuth.createUserWithEmailAndPassword(s1, s2)
+        firebaseAuth.signInWithEmailAndPassword(s1, s2)
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            //Start the navigation Activity
-                           // getActivity().finish();
+                            // Sign in success
+                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                            getActivity().finish();
                             Intent intent = new Intent(getActivity(), NavigationActivity.class);
                             startActivity(intent);
+
+                        } else {
+                            // If sign in fails, message for user.
+
+                            Toast.makeText(getActivity(), getString(R.string.signin_failed),
+                                    Toast.LENGTH_SHORT).show();
+
                         }
                     }
                 });
@@ -98,14 +107,11 @@ public class SignIn extends Fragment implements View.OnClickListener {
         if (view == btnSignin){
             SigninUser();
         }
+
         if (view == signuptext){
             //change fragment to signin
-            FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            SignUp signUp = new SignUp();
-            fragmentTransaction.replace(R.id.signin_container, signUp);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
+            GoToSignUp goToSignUp = (GoToSignUp) getActivity();
+            goToSignUp.signUpSwitch();
         }
 
     }

@@ -1,13 +1,13 @@
 package com.example.keepsake;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -21,7 +21,6 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
     private TextView useremail;
     private FirebaseAuth firebaseAuth;
     SignIn signIn = new SignIn();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +37,6 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         useremail = (TextView) navigationView.getHeaderView(0).findViewById(R.id.userEmail);
-        //useremail = (TextView)navigationView.findViewById(R.id.userEmail);
         useremail.setText(user.getEmail());
 
         navigationView.setNavigationItemSelectedListener(this);
@@ -98,9 +96,8 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
 
             case R.id.nav_logout:
                 firebaseAuth.signOut();
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.add(R.id.signin_container, signIn);
-                fragmentTransaction.commit();
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);

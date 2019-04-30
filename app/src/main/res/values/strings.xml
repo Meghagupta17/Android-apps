@@ -15,4 +15,14 @@
     <string name="useremail">User Email id</string>
     <string name="welcome">Welcome</string>
     <string name="ff_welcome"><![CDATA[Friends & Family who were there to welcome me]]></string>
+    <string name="save">Save</string>
+    <string name="babyheight">height</string>
+    <string name="babyweight">weight</string>
+    <string name="born_on">born on</string>
+    <string name="babyname">name</string>
+    <string name="introducing_me">Introducing me</string>
+    <string name="upload">Upload</string>
+    <string name="enter_email">Please enter Email Id</string>
+    <string name="enter_password">Please enter Password</string>
+    <string name="signin_failed">Sign in failed</string>
 </resources>

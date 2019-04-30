@@ -4,12 +4,7 @@
     android:orientation="vertical">
 
     <FrameLayout
-        android:id="@+id/signin_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <FrameLayout
-        android:id="@+id/signup_container"
+        android:id="@+id/signup_signin_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

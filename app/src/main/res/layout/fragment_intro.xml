@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Introducing me"
+        android:text="@string/introducing_me"
         android:textSize="30sp"
         android:textStyle="italic"
         android:textColor="#1E90FF"
@@ -17,8 +17,10 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:padding="16dp"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_launcher"
         />
 
     <EditText
@@ -26,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="name"
+        android:hint="@string/babyname"
         android:inputType="text"
         android:textStyle="italic"
         android:padding="16dp"/>
@@ -36,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="born on"
+        android:hint="@string/born_on"
         android:inputType="text"
         android:textStyle="italic"
         android:padding="16dp"/>
@@ -46,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="weight"
+        android:hint="@string/babyweight"
         android:inputType="text"
         android:textStyle="italic"
         android:padding="16dp"/>
@@ -56,8 +58,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="height"
-        android:inputType="text"
+        android:hint="@string/babyheight"
         android:textStyle="italic"
         android:padding="16dp"/>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:text="@string/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_marginTop="16dp"/>
+
 </LinearLayout>
