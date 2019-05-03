@@ -1,9 +1,15 @@
 package com.example.keepsake;
 
-public class GridViewImage {
+import android.graphics.Bitmap;
 
-    public String imageText = "hello";
-    public String image = "@drawable/welcome";
+/*public class GridViewImage {
+
+   // public String imageText = "hello";
+   // public String image = "@drawable/welcome";
+    public String imageText;
+    public String image;
+
+
 
 
     public GridViewImage( String imageText, String image) {
@@ -15,4 +21,20 @@ public class GridViewImage {
     public GridViewImage() {
 
     }
-}
+
+    public String getImageText() {
+        return imageText;
+    }
+
+    public void setImageText(String imageText) {
+        this.imageText = imageText;
+    }
+
+    public Bitmap getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+}*/

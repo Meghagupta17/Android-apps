@@ -25,4 +25,10 @@
     <string name="enter_email">Please enter Email Id</string>
     <string name="enter_password">Please enter Password</string>
     <string name="signin_failed">Sign in failed</string>
+    <string name="my_famous_firsts">My famous firsts</string>
+    <string name="my_first_bath">My first bath</string>
+    <string name="my_first_smile">My first smile</string>
+    <string name="my_first_word">My first word</string>
+    <string name="my_first_teeth">My first teeth</string>
+    <string name="my_first_outing_adventure">My first outing adventure</string>
 </resources>

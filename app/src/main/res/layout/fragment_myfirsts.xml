@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="My famous firsts"
+        android:text="@string/my_famous_firsts"
         android:textSize="30sp"
         android:textStyle="italic"
         android:textColor="#1E90FF"
@@ -17,7 +17,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="50dp"
         android:padding="16dp"
         android:layout_gravity="center"
         android:src="@mipmap/ic_launcher"/>
@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="My first bath "
+        android:hint="@string/my_first_bath"
         android:inputType="text"
         android:textStyle="italic"
         android:padding="16dp"/>
@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="My first smile"
+        android:hint="@string/my_first_smile"
         android:inputType="text"
         android:textStyle="italic"
         android:padding="16dp"/>
@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="My first word"
+        android:hint="@string/my_first_word"
         android:inputType="text"
         android:textStyle="italic"
         android:padding="16dp"/>
@@ -57,7 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="My first teeth"
+        android:hint="@string/my_first_teeth"
         android:inputType="text"
         android:textStyle="italic"
         android:padding="16dp"/>
@@ -67,7 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="My first outing adventure"
+        android:hint="@string/my_first_outing_adventure"
         android:inputType="text"
         android:textStyle="italic"
         android:padding="16dp"/>

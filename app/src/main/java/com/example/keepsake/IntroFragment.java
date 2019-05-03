@@ -78,7 +78,7 @@ public class IntroFragment extends Fragment {
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser user = firebaseAuth.getCurrentUser();
         String userId = firebaseAuth.getCurrentUser().getUid();
-        myRef = FirebaseDatabase.getInstance().getReference().child("users").child(userId);
+        myRef = FirebaseDatabase.getInstance().getReference().child("intro").child(userId);
 
         //myRef = firebaseDatabase.getReference("userId");// add user email ref
 

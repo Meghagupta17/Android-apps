@@ -3,15 +3,20 @@
     android:id="@+id/android_gridview_example"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     android:orientation="vertical"
-    android:background="@color/colorAccent">
+    android:background="#FFC0CB">
 
     <GridView
         android:id="@+id/grid_view_image_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="5dp"
         android:columnWidth="110dp"
         android:gravity="center"
-        android:numColumns="2"/>
+        android:numColumns="2"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="5dp"
+        android:focusable="true"/>
 
 </LinearLayout>

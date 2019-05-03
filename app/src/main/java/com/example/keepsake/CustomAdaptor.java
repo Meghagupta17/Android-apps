@@ -1,6 +1,7 @@
 package com.example.keepsake;
 
 import android.content.Context;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class CustomAdaptor extends BaseAdapter{
+/*public class CustomAdaptor extends BaseAdapter{
 
     public ArrayList<GridViewImage> gridViewArrayList = new ArrayList<GridViewImage>();
     private Context context;
@@ -48,8 +49,8 @@ public class CustomAdaptor extends BaseAdapter{
         TextView gridviewtext = (TextView) convertView.findViewById(R.id.gridview_text);
         ImageView gridviewimage = (ImageView) convertView.findViewById(R.id.gridview_image);
 
-        gridviewtext.setText(gridViewArrayList.get(pos).imageText);
-       // gridviewtext.setText(imagetext[pos]);
+       gridviewtext.setText(gridViewArrayList.get(pos).imageText);
+       //gridviewtext.setText(imagetext[pos]);
         Glide.with(context)
                 .asBitmap()
                 .load(gridViewArrayList.get(pos).image)
@@ -58,4 +59,4 @@ public class CustomAdaptor extends BaseAdapter{
 
         return convertView;
     }
-}
+}*/
