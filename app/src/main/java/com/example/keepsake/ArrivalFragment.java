@@ -1,5 +1,6 @@
 package com.example.keepsake;
 
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TimePicker;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,6 +19,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.Calendar;
 
 public class ArrivalFragment extends Fragment {
 
@@ -39,6 +43,28 @@ public class ArrivalFragment extends Fragment {
         city = view.findViewById(R.id.city);
         hospital = view.findViewById(R.id.hospital);
         familyFriends = view.findViewById(R.id.ff);
+
+        dobTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar c = Calendar.getInstance();
+                int hour = c.get(Calendar.HOUR_OF_DAY);
+                int minute = c.get(Calendar.MINUTE);
+
+                // Launch Time Picker Dialog
+                TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(),
+                        new TimePickerDialog.OnTimeSetListener() {
+
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay,
+                                                  int minute) {
+
+                                dobTime.setText(hourOfDay + ":" + minute);
+                            }
+                        },hour, minute, false);
+                timePickerDialog.show();
+            }
+        });
 
         FirebaseApp.initializeApp(getActivity());
         firebaseDatabase  = FirebaseDatabase.getInstance();

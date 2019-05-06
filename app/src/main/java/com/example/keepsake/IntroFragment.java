@@ -56,21 +56,20 @@ public class IntroFragment extends Fragment {
                 int month = calendar.get(Calendar.MONTH);
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-                DatePickerDialog dialog = new DatePickerDialog(getActivity(),
-                        android.R.style.Theme_DeviceDefault_Dialog_MinWidth, (DatePickerDialog.OnDateSetListener) dob, year, month, day);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
+                DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(),
+                        new DatePickerDialog.OnDateSetListener() {
+
+                            @Override
+                            public void onDateSet(DatePicker view, int year,
+                                                  int monthOfYear, int dayOfMonth) {
+
+                                dob.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+
+                            }
+                        }, year, month, day);
+                datePickerDialog.show();
             }
         });
-
-                dateSetListener = new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int day) {
-                        month = month+1;
-                        String date = month + "/" + day + "/" +year;
-                        dob.setText(date);
-                    }
-                };
 
 
         FirebaseApp.initializeApp(getActivity());

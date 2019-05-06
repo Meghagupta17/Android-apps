@@ -13,7 +13,7 @@ import java.util.List;
 public class FamilyPicFragment extends Fragment {
 
     private GridView gridView;
-    List<Integer> image = new ArrayList<>();
+    List<String> image = new ArrayList<>();
     List<String> imageText = new ArrayList<>();
 
     @Override
@@ -22,16 +22,32 @@ public class FamilyPicFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_familypic, container, false);
 
         gridView = view.findViewById(R.id.grid_view_family);
+        image.add("baby.jpg");
+        image.add("baby.jpg");
+        image.add("baby.jpg");
+        image.add("baby.jpg");
+        image.add("baby.jpg");
+        image.add("baby.jpg");
+        image.add("baby.jpg");
+        image.add("baby.jpg");
+        /*image.add(R.drawable.baby);
+        image.add(R.drawable.baby);
         image.add(R.drawable.welcome);
         image.add(R.drawable.welcome);
         image.add(R.drawable.welcome);
         image.add(R.drawable.welcome);
         image.add(R.drawable.welcome);
+        image.add(R.drawable.welcome);*/
+
         imageText.add("First pic with Mom & dad");
-        imageText.add("First pic with Mom & dad");
-        imageText.add("First pic with Mom & dad");
-        imageText.add("First pic with Mom & dad");
-        imageText.add("1 Month old");
+        imageText.add("First pic with my sibling");
+        imageText.add("First pic with Grandparents");
+        imageText.add("First pic with Grandparents");
+        imageText.add("First pic with Uncle & Aunt");
+        imageText.add("First pic with Uncle & Aunt");
+        imageText.add("First pic with cousin");
+        imageText.add("First pic with cousin");
+
         ImageAdapter imageAdapter = new ImageAdapter(getActivity(), image, imageText );
         gridView.setAdapter(imageAdapter);
 

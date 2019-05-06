@@ -85,7 +85,7 @@ public class SignIn extends Fragment implements View.OnClickListener {
                         if (task.isSuccessful()) {
                             // Sign in success
                             FirebaseUser user = firebaseAuth.getCurrentUser();
-                            getActivity().finish();
+                           // getActivity().finish();
                             Intent intent = new Intent(getActivity(), NavigationActivity.class);
                             startActivity(intent);
 

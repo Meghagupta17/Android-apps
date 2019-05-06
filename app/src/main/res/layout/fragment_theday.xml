@@ -8,26 +8,20 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="The world around me"
+        android:text="@string/the_world_around_me"
         android:textSize="30sp"
         android:textStyle="italic"
         android:textColor="#1E90FF"
         android:layout_marginTop="20dp"
         android:textAlignment="center"/>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:padding="16dp"
-        android:layout_gravity="center"
-        android:src="@mipmap/ic_launcher"/>
 
     <EditText
         android:id="@+id/leader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="National leader"
+        android:hint="@string/national_leader"
         android:inputType="text"
         android:textStyle="italic"
         android:padding="16dp"/>
@@ -37,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="headline on the day I was born"
+        android:hint="@string/headline_on_the_day_i_was_born"
         android:inputType="text"
         android:textStyle="italic"
         android:padding="16dp"/>
@@ -47,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="Cost of gallon of milk"
+        android:hint="@string/cost_of_gallon_of_milk"
         android:inputType="text"
         android:textStyle="italic"
         android:padding="16dp"/>
@@ -57,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="Cost of package of diapers"
+        android:hint="@string/cost_of_package_of_diapers"
         android:inputType="text"
         android:textStyle="italic"
         android:padding="16dp"/>

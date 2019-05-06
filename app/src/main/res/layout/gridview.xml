@@ -19,7 +19,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:textSize="20sp"
+        android:textColor="#000"
         android:text=""
+        android:textStyle="italic"
         android:gravity="center"/>
 
     <Button
@@ -28,6 +30,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:padding="5dp"
+        android:textSize="15sp"
+        android:background="@color/colorAccent"
+        android:textStyle="bold"
         android:layout_gravity="center" />
 
 </LinearLayout>

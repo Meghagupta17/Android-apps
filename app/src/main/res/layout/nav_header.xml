@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="Welcome To keepsake"
+        android:text="@string/welcome_to_keepsake"
         android:gravity="center"
         android:textSize="23sp"
         android:textColor="@color/colorPrimaryDark"/>

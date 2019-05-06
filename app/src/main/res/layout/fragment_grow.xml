@@ -8,26 +8,20 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Watch me grow"
+        android:text="@string/watch_me_grow"
         android:textSize="30sp"
         android:textStyle="italic"
         android:textColor="#1E90FF"
         android:layout_marginTop="20dp"
         android:textAlignment="center"/>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:padding="16dp"
-        android:layout_gravity="center"
-        android:src="@mipmap/ic_launcher"/>
 
     <EditText
         android:id="@+id/age1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="1 month weight height"
+        android:hint="@string/_1_month_weight_height"
         android:inputType="text"
         android:textStyle="italic"
         android:padding="16dp"/>
@@ -37,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="3 months weight height"
+        android:hint="@string/_3_months_weight_height"
         android:inputType="text"
         android:textStyle="italic"
         android:padding="16dp"/>
@@ -47,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="6 months weight height"
+        android:hint="@string/_6_months_weight_height"
         android:inputType="text"
         android:textStyle="italic"
         android:padding="16dp"/>
@@ -57,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="9 months weight height"
+        android:hint="@string/_9_months_weight_height"
         android:inputType="text"
         android:textStyle="italic"
         android:padding="16dp"/>
@@ -67,7 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="12 months weight height"
+        android:hint="@string/_12_months_weight_height"
         android:inputType="text"
         android:textStyle="italic"
         android:padding="16dp"/>
