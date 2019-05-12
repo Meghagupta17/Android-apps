@@ -39,14 +39,14 @@ public class FamilyPicFragment extends Fragment {
         image.add(R.drawable.welcome);
         image.add(R.drawable.welcome);*/
 
-        imageText.add("First pic with Mom & dad");
-        imageText.add("First pic with my sibling");
-        imageText.add("First pic with Grandparents");
-        imageText.add("First pic with Grandparents");
-        imageText.add("First pic with Uncle & Aunt");
-        imageText.add("First pic with Uncle & Aunt");
-        imageText.add("First pic with cousin");
-        imageText.add("First pic with cousin");
+        imageText.add(getString(R.string.picwithmomdad));
+        imageText.add(getString(R.string.picwithsiblings));
+        imageText.add(getString(R.string.picwithgrandparents));
+        imageText.add(getString(R.string.picwithgrandparentss));
+        imageText.add(getString(R.string.picwithunclenaunt));
+        imageText.add(getString(R.string.picwithunclenaunt2));
+        imageText.add(getString(R.string.picwithcousin));
+        imageText.add(getString(R.string.picwithcousin2));
 
         ImageAdapter imageAdapter = new ImageAdapter(getActivity(), image, imageText );
         gridView.setAdapter(imageAdapter);

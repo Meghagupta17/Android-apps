@@ -3,10 +3,10 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="newuser">New User? Sign up here</string>
-    <string name="signinbtn">SignIn</string>
+    <string name="signinbtn">Sign In</string>
     <string name="passwordhint">Enter your Password</string>
     <string name="emailhint">Enter your Email Id</string>
-    <string name="signup">SignUp</string>
+    <string name="signup">Sign Up</string>
     <string name="alreadyuser">Already have an account? Sign in</string>
     <string name="passwordhints">Enter your Password</string>
     <string name="emailidhint">Enter your Email Id</string>
@@ -49,7 +49,7 @@
     <string name="headline_on_the_day_i_was_born">headline on the day I was born</string>
     <string name="cost_of_gallon_of_milk">Cost of gallon of milk</string>
     <string name="cost_of_package_of_diapers">Cost of package of diapers</string>
-    <string name="welcome_to_keepsake">Welcome To keepsake</string>
+    <string name="welcome_to_keepsake">Welcome To keepSake</string>
     <string name="two_months_old">2 Months old</string>
     <string name="three_months_old">3 Months old</string>
     <string name="four_months_old">4 Months old</string>
@@ -61,4 +61,25 @@
     <string name="ten_months_old">10 Months old</string>
     <string name="eleven_months_old">11 Months old</string>
     <string name="twelve_months_old">12 Months old</string>
+    <string name="my_first_pic_ever">My first pic ever</string>
+    <string name="my_monthly_pic">My monthly pic</string>
+    <string name="savebtnToast">Memories saved</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="my_first_pic_with_family">My First Pic With Family</string>
+    <string name="my_monthly_pic_menu">My Monthly Pic</string>
+    <string name="my_famous_firsts_menu">My Famous First</string>
+    <string name="watch_me_grow_menu">Watch Me Grow</string>
+    <string name="the_world_areound_me_menu">The World around Me</string>
+    <string name="my_big_arrival_menu">My Big Arrival</string>
+    <string name="intrducing_me_menu">Introducing Me</string>
+    <string name="keepsake">keepSake</string>
+    <string name="keepsakeP">keepSake</string>
+    <string name="picwithmomdad"><![CDATA[With Mom & dad]]></string>
+    <string name="picwithsiblings">With siblings</string>
+    <string name="picwithgrandparents">With Grandparents</string>
+    <string name="picwithgrandparentss">With Grandparents</string>
+    <string name="picwithunclenaunt"><![CDATA[With Uncle & Aunt]]></string>
+    <string name="picwithunclenaunt2"><![CDATA[With Uncle & Aunt]]></string>
+    <string name="picwithcousin">With cousin</string>
+    <string name="picwithcousin2">With cousin</string>
 </resources>

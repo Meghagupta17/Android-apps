@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFDAB9">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/my_first_pic_ever"
+                android:textSize="30sp"
+                android:textStyle="italic"
+                android:textColor="#1E90FF"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:hint="@string/babyname"
+                android:inputType="textCapSentences"
+                android:textStyle="italic"
+                android:padding="16dp"/>
+
+            <EditText
+                android:id="@+id/dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:hint="@string/born_on"
+                android:textStyle="italic"
+                android:padding="16dp"
+                android:ems="10"
+                android:inputType="date"
+                android:focusable="false"/>
+
+            <EditText
+                android:id="@+id/weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:hint="@string/babyweight"
+                android:inputType="text"
+                android:textStyle="italic"
+                android:padding="16dp"/>
+
+            <EditText
+                android:id="@+id/height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:hint="@string/babyheight"
+                android:textStyle="italic"
+                android:inputType="text"
+                android:padding="16dp"/>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:text="@string/save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

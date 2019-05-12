@@ -20,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
         android:hint="@string/the_time_i_was_born"
         android:inputType="time"
         android:textStyle="italic"
@@ -31,8 +32,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
         android:hint="@string/the_city_i_was_born_in"
-        android:inputType="text"
+        android:inputType="textCapSentences"
         android:textStyle="italic"
         android:padding="16dp"/>
 
@@ -41,8 +43,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
         android:hint="@string/the_hospital_i_was_born_in"
-        android:inputType="text"
+        android:inputType="textCapSentences"
         android:textStyle="italic"
         android:padding="16dp"/>
 
@@ -51,8 +54,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
         android:hint="@string/ff_welcome"
-        android:inputType="text"
+        android:inputType="textCapSentences"
         android:textStyle="italic"
         android:padding="16dp"/>
 
@@ -63,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="10dp"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="20dp"/>
 
 
 </LinearLayout>

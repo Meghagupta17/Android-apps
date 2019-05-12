@@ -8,9 +8,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/keepsake_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/keepsake_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".NavigationActivity"
@@ -18,7 +18,8 @@
         </activity>
 
         <activity android:name=".MainActivity"
-            android:windowSoftInputMode="adjustPan|stateVisible">
+            android:windowSoftInputMode="adjustPan|stateVisible"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

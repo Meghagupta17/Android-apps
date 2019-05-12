@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -107,6 +108,10 @@ public class ArrivalFragment extends Fragment {
                 String uniqueKey ="arrivalKey";
                 Arrival arrival = new Arrival(birthTime, birthCity, birthHospital, familythere);
                 myRef.child(uniqueKey).setValue(arrival);
+                Toast.makeText(getActivity(), getString(R.string.savebtnToast),
+                        Toast.LENGTH_SHORT).show();
+
+
             }
         });
 

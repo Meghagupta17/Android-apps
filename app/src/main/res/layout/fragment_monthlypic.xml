@@ -7,10 +7,20 @@
     android:orientation="vertical"
     android:background="#FFC0CB">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/my_monthly_pic"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        android:textColor="#1E90FF"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"/>
+
     <GridView
         android:id="@+id/grid_view_image_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:columnWidth="110dp"
         android:gravity="center"

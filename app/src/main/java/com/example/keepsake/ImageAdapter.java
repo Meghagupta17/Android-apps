@@ -96,14 +96,14 @@ public class ImageAdapter extends BaseAdapter {
         return view;
     }
 
-    private void openFileChooser() {
-    }
+        private void openFileChooser() {
+        }
 
-    /*private void openFileChooser() {
+        /*private void openFileChooser() {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        this.startActivityForResult();
+        fragment.startActivityForResult(intent,111);
 
     }*/
 

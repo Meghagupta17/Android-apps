@@ -20,8 +20,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
         android:hint="@string/babyname"
-        android:inputType="text"
+        android:inputType="textCapSentences"
         android:textStyle="italic"
         android:padding="16dp"/>
 
@@ -30,6 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
         android:hint="@string/born_on"
         android:textStyle="italic"
         android:padding="16dp"
@@ -42,6 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
         android:hint="@string/babyweight"
         android:inputType="text"
         android:textStyle="italic"
@@ -52,8 +55,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
         android:hint="@string/babyheight"
         android:textStyle="italic"
+        android:inputType="text"
         android:padding="16dp"/>
 
     <Button
@@ -63,6 +68,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="10dp"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>

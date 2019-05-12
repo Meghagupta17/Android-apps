@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFACD">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/watch_me_grow"
+                android:textSize="30sp"
+                android:textStyle="italic"
+                android:textColor="#1E90FF"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"/>
+
+
+            <EditText
+                android:id="@+id/age1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:hint="@string/_1_month_weight_height"
+                android:inputType="textCapSentences"
+                android:textStyle="italic"
+                android:padding="16dp"/>
+
+            <EditText
+                android:id="@+id/age3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:hint="@string/_3_months_weight_height"
+                android:inputType="textCapSentences"
+                android:textStyle="italic"
+                android:padding="16dp"/>
+
+            <EditText
+                android:id="@+id/age6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:hint="@string/_6_months_weight_height"
+                android:inputType="textCapSentences"
+                android:textStyle="italic"
+                android:padding="16dp"/>
+
+            <EditText
+                android:id="@+id/age9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:hint="@string/_9_months_weight_height"
+                android:inputType="textCapSentences"
+                android:textStyle="italic"
+                android:padding="16dp"/>
+
+            <EditText
+                android:id="@+id/age12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:hint="@string/_12_months_weight_height"
+                android:inputType="textCapSentences"
+                android:textStyle="italic"
+                android:padding="16dp"/>
+
+            <Button
+                android:id="@+id/btnSavegrow"
+                android:text="@string/save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+
+
+</ScrollView>
