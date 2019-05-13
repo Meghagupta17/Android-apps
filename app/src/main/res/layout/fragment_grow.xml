@@ -21,9 +21,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:hint="@string/_1_month_weight_height"
-        android:inputType="textCapSentences"
+        android:inputType="textCapSentences|textNoSuggestions"
         android:textStyle="italic"
         android:padding="16dp"/>
 
@@ -32,9 +32,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:hint="@string/_3_months_weight_height"
-        android:inputType="textCapSentences"
+        android:inputType="textCapSentences|textNoSuggestions"
         android:textStyle="italic"
         android:padding="16dp"/>
 
@@ -43,9 +43,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:hint="@string/_6_months_weight_height"
-        android:inputType="textCapSentences"
+        android:inputType="textCapSentences|textNoSuggestions"
         android:textStyle="italic"
         android:padding="16dp"/>
 
@@ -54,9 +54,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:hint="@string/_9_months_weight_height"
-        android:inputType="textCapSentences"
+        android:inputType="textCapSentences|textNoSuggestions"
         android:textStyle="italic"
         android:padding="16dp"/>
 
@@ -65,9 +65,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:hint="@string/_12_months_weight_height"
-        android:inputType="textCapSentences"
+        android:inputType="textCapSentences|textNoSuggestions"
         android:textStyle="italic"
         android:padding="16dp"/>
 
@@ -78,7 +78,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="10dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
 
 
 </LinearLayout>

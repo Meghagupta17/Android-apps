@@ -34,7 +34,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:hint="@string/my_first_smile"
-        android:inputType="textCapSentences"
+        android:inputType="textCapSentences|textNoSuggestions"
         android:textStyle="italic"
         android:padding="16dp"/>
 
@@ -45,7 +45,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:hint="@string/my_first_word"
-        android:inputType="textCapSentences"
+        android:inputType="textCapSentences|textNoSuggestions"
         android:textStyle="italic"
         android:padding="16dp"/>
 
@@ -56,7 +56,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:hint="@string/my_first_teeth"
-        android:inputType="textCapSentences"
+        android:inputType="textCapSentences|textNoSuggestions"
         android:textStyle="italic"
         android:padding="16dp"/>
 
@@ -67,7 +67,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:hint="@string/my_first_outing_adventure"
-        android:inputType="textCapSentences"
+        android:inputType="textCapSentences|textNoSuggestions"
         android:textStyle="italic"
         android:padding="16dp"/>
 
@@ -78,6 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="10dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
 
 </LinearLayout>

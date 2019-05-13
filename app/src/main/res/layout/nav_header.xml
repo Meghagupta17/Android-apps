@@ -14,8 +14,8 @@
         android:padding="8dp"
         android:text="@string/welcome_to_keepsake"
         android:gravity="center"
-        android:textSize="23sp"
-        android:textColor="@color/colorPrimaryDark"/>
+        android:textSize="25sp"
+        android:textColor="#000"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
         android:id="@+id/userEmail"
         android:text="@string/useremail"
         android:gravity="center"
-        android:textSize="23sp"
-        android:textColor="@color/colorPrimaryDark"/>
+        android:textSize="20sp"
+        android:textColor="#000"/>
 
 </LinearLayout>

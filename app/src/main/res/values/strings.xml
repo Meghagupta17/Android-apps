@@ -2,7 +2,7 @@
     <string name="app_name">keepSake</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="newuser">New User? Sign up here</string>
+    <string name="newuser">New User? Sign Up here</string>
     <string name="signinbtn">Sign In</string>
     <string name="passwordhint">Enter your Password</string>
     <string name="emailhint">Enter your Email Id</string>
@@ -45,10 +45,10 @@
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
     <string name="the_world_around_me">The world around me</string>
-    <string name="national_leader">National leader</string>
+    <string name="national_leader">National leader on the day I was born</string>
     <string name="headline_on_the_day_i_was_born">headline on the day I was born</string>
-    <string name="cost_of_gallon_of_milk">Cost of gallon of milk</string>
-    <string name="cost_of_package_of_diapers">Cost of package of diapers</string>
+    <string name="cost_of_gallon_of_milk">Cost of gallon of milk on the day I was born</string>
+    <string name="cost_of_package_of_diapers">Cost of package of diapers on the day I was born</string>
     <string name="welcome_to_keepsake">Welcome To keepSake</string>
     <string name="two_months_old">2 Months old</string>
     <string name="three_months_old">3 Months old</string>
