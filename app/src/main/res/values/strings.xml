@@ -14,7 +14,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="useremail">User Email id</string>
     <string name="welcome">Welcome</string>
-    <string name="ff_welcome"><![CDATA[Friends & Family who were there to welcome me]]></string>
+    <string name="ff_welcome"><![CDATA[Friends & Family who were present to welcome me]]></string>
     <string name="save">Save</string>
     <string name="babyheight">height</string>
     <string name="babyweight">weight</string>
@@ -82,4 +82,7 @@
     <string name="picwithunclenaunt2"><![CDATA[With Uncle & Aunt]]></string>
     <string name="picwithcousin">With cousin</string>
     <string name="picwithcousin2">With cousin</string>
+    <string name="authentication_failed">Authentication failed</string>
+    <string name="signin_successfull">SignIn Successful</string>
+    <string name="OR">or</string>
 </resources>

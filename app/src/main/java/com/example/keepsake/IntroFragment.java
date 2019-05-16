@@ -1,8 +1,6 @@
 package com.example.keepsake;
 
 import android.app.DatePickerDialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -12,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,9 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
 public class IntroFragment extends Fragment {
 
@@ -78,8 +73,6 @@ public class IntroFragment extends Fragment {
         FirebaseUser user = firebaseAuth.getCurrentUser();
         String userId = firebaseAuth.getCurrentUser().getUid();
         myRef = FirebaseDatabase.getInstance().getReference().child("intro").child(userId);
-
-        //myRef = firebaseDatabase.getReference("userId");// add user email ref
 
 
         myRef.addValueEventListener(new ValueEventListener() {

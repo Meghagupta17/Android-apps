@@ -1,84 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#B0E0E6">
-
-    <TextView
+    android:fillViewport="true" >
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/my_famous_firsts"
-        android:textSize="30sp"
-        android:textStyle="italic"
-        android:textColor="#1E90FF"
-        android:layout_marginTop="20dp"
-        android:textAlignment="center"/>
+        android:orientation="vertical"
+        android:background="#fde3e9">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/my_famous_firsts"
+            android:textSize="30sp"
+            android:textStyle="italic"
+            android:textColor="#1E90FF"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"/>
 
 
-    <EditText
-        android:id="@+id/bath"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:hint="@string/my_first_bath"
-        android:inputType="textCapSentences"
-        android:textStyle="italic"
-        android:padding="16dp"/>
+        <EditText
+            android:id="@+id/bath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="10dp"
+            android:hint="@string/my_first_bath"
+            android:inputType="textCapSentences"
+            android:textStyle="italic"
+            android:padding="16dp"/>
 
-    <EditText
-        android:id="@+id/smile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:hint="@string/my_first_smile"
-        android:inputType="textCapSentences|textNoSuggestions"
-        android:textStyle="italic"
-        android:padding="16dp"/>
+        <EditText
+            android:id="@+id/smile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:hint="@string/my_first_smile"
+            android:inputType="textCapSentences|textNoSuggestions"
+            android:textStyle="italic"
+            android:padding="16dp"/>
 
-    <EditText
-        android:id="@+id/word"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:hint="@string/my_first_word"
-        android:inputType="textCapSentences|textNoSuggestions"
-        android:textStyle="italic"
-        android:padding="16dp"/>
+        <EditText
+            android:id="@+id/word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:hint="@string/my_first_word"
+            android:inputType="textCapSentences|textNoSuggestions"
+            android:textStyle="italic"
+            android:padding="16dp"/>
 
-    <EditText
-        android:id="@+id/teeth"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:hint="@string/my_first_teeth"
-        android:inputType="textCapSentences|textNoSuggestions"
-        android:textStyle="italic"
-        android:padding="16dp"/>
+        <EditText
+            android:id="@+id/teeth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:hint="@string/my_first_teeth"
+            android:inputType="textCapSentences|textNoSuggestions"
+            android:textStyle="italic"
+            android:padding="16dp"/>
 
-    <EditText
-        android:id="@+id/outing"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:hint="@string/my_first_outing_adventure"
-        android:inputType="textCapSentences|textNoSuggestions"
-        android:textStyle="italic"
-        android:padding="16dp"/>
+        <EditText
+            android:id="@+id/outing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:hint="@string/my_first_outing_adventure"
+            android:inputType="textCapSentences|textNoSuggestions"
+            android:textStyle="italic"
+            android:padding="16dp"/>
 
-    <Button
-        android:id="@+id/btnSavefirsts"
-        android:text="@string/save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"/>
+        <Button
+            android:id="@+id/btnSavefirsts"
+            android:text="@string/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:background="#a6767c"/>
 
-</LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

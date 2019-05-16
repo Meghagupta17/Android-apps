@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,14 +29,6 @@ public class FamilyPicFragment extends Fragment {
         image.add("baby.jpg");
         image.add("baby.jpg");
         image.add("baby.jpg");
-        /*image.add(R.drawable.baby);
-        image.add(R.drawable.baby);
-        image.add(R.drawable.welcome);
-        image.add(R.drawable.welcome);
-        image.add(R.drawable.welcome);
-        image.add(R.drawable.welcome);
-        image.add(R.drawable.welcome);
-        image.add(R.drawable.welcome);*/
 
         imageText.add(getString(R.string.picwithmomdad));
         imageText.add(getString(R.string.picwithsiblings));
@@ -55,4 +46,4 @@ public class FamilyPicFragment extends Fragment {
 
     }
 
-    }
+}

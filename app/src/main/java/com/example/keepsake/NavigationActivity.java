@@ -11,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -98,6 +97,7 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
                 firebaseAuth.signOut();
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
+
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);

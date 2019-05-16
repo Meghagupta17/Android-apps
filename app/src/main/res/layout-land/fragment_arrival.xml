@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#FFC0CB">
+        android:background="#fde3e9">
 
             <TextView
                 android:layout_width="match_parent"
@@ -26,11 +26,13 @@
                 android:id="@+id/dobTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginStart="20dp"
                 android:hint="@string/the_time_i_was_born"
                 android:inputType="time"
                 android:textStyle="italic"
+                android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="16dp"
                 android:focusable="false"/>
 
@@ -44,6 +46,8 @@
                 android:hint="@string/the_city_i_was_born_in"
                 android:inputType="textCapSentences|textNoSuggestions"
                 android:textStyle="italic"
+                android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="16dp"/>
 
             <EditText
@@ -56,6 +60,8 @@
                 android:hint="@string/the_hospital_i_was_born_in"
                 android:inputType="textCapSentences|textNoSuggestions"
                 android:textStyle="italic"
+                android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="16dp"/>
 
             <EditText
@@ -68,18 +74,23 @@
                 android:hint="@string/ff_welcome"
                 android:inputType="textCapSentences|textNoSuggestions"
                 android:textStyle="italic"
+                android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="16dp"/>
 
             <Button
                 android:id="@+id/btnSavearrival"
                 android:text="@string/save"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:background="#a6767c"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:padding="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginBottom="20dp"/>
-
 
     </LinearLayout>
 

@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#FFFACD">
+        android:background="#fde3e9">
 
             <TextView
                 android:layout_width="match_parent"
@@ -25,7 +25,7 @@
                 android:id="@+id/age1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginStart="20dp"
                 android:hint="@string/_1_month_weight_height"
                 android:inputType="textCapSentences|textNoSuggestions"
@@ -83,8 +83,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:padding="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="20dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:background="#a6767c"/>
 
     </LinearLayout>
 

@@ -1,70 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#FFFF99">
+    android:fillViewport="true" >
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/the_world_around_me"
-        android:textSize="30sp"
-        android:textStyle="italic"
-        android:textColor="#1E90FF"
-        android:layout_marginTop="20dp"
-        android:textAlignment="center"/>
+        android:orientation="vertical"
+        android:background="#fde3e9">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/the_world_around_me"
+            android:textSize="30sp"
+            android:textStyle="italic"
+            android:textColor="#1E90FF"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"/>
 
 
-    <EditText
-        android:id="@+id/leader"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="@string/national_leader"
-        android:inputType="textNoSuggestions|textCapSentences"
-        android:textStyle="italic"
-        android:padding="16dp"/>
+        <EditText
+            android:id="@+id/leader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="10dp"
+            android:hint="@string/national_leader"
+            android:inputType="textNoSuggestions|textCapSentences"
+            android:textStyle="italic"
+            android:padding="16dp"/>
 
-    <EditText
-        android:id="@+id/headline"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="@string/headline_on_the_day_i_was_born"
-        android:inputType="textNoSuggestions|textCapSentences"
-        android:textStyle="italic"
-        android:padding="16dp"/>
+        <EditText
+            android:id="@+id/headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:hint="@string/headline_on_the_day_i_was_born"
+            android:inputType="textNoSuggestions|textCapSentences"
+            android:textStyle="italic"
+            android:padding="16dp"/>
 
-    <EditText
-        android:id="@+id/milkCost"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="@string/cost_of_gallon_of_milk"
-        android:inputType="text"
-        android:textStyle="italic"
-        android:padding="16dp"/>
+        <EditText
+            android:id="@+id/milkCost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:hint="@string/cost_of_gallon_of_milk"
+            android:inputType="text"
+            android:textStyle="italic"
+            android:padding="16dp"/>
 
-    <EditText
-        android:id="@+id/diaperCost"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="@string/cost_of_package_of_diapers"
-        android:inputType="text"
-        android:textStyle="italic"
-        android:padding="16dp"/>
+        <EditText
+            android:id="@+id/diaperCost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:hint="@string/cost_of_package_of_diapers"
+            android:inputType="text"
+            android:textStyle="italic"
+            android:padding="16dp"/>
 
-    <Button
-        android:id="@+id/btnSaveday"
-        android:text="@string/save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"/>
+        <Button
+            android:id="@+id/btnSaveday"
+            android:text="@string/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:background="#a6767c"/>
+
+    </LinearLayout>
 
 
-</LinearLayout>
+</ScrollView>

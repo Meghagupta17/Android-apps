@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -20,11 +19,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.Calendar;
 
 public class ArrivalFragment extends Fragment {
-
 
     EditText dobTime;
     EditText city;
@@ -91,7 +88,6 @@ public class ArrivalFragment extends Fragment {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
-
             }
 
         });
@@ -110,7 +106,6 @@ public class ArrivalFragment extends Fragment {
                 myRef.child(uniqueKey).setValue(arrival);
                 Toast.makeText(getActivity(), getString(R.string.savebtnToast),
                         Toast.LENGTH_SHORT).show();
-
 
             }
         });
