@@ -85,4 +85,6 @@
     <string name="authentication_failed">Authentication failed</string>
     <string name="signin_successfull">SignIn Successful</string>
     <string name="OR">or</string>
+    <string name="upload_succ">Upload Done</string>
+    <string name="upload_fail">Upload Failed</string>
 </resources>

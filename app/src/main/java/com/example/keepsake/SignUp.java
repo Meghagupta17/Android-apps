@@ -86,6 +86,7 @@ public class SignUp extends Fragment implements View.OnClickListener {
                             Toast.makeText(getActivity(), "Registration Successfully", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getActivity(), NavigationActivity.class);
                             startActivity(intent);
+                            getActivity().finish();
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(getActivity(), "Authentication failed.", Toast.LENGTH_SHORT).show();

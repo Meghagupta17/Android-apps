@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -26,7 +27,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-import java.util.concurrent.Executor;
 
 
 public class SignIn extends Fragment implements View.OnClickListener {
@@ -109,7 +109,7 @@ public class SignIn extends Fragment implements View.OnClickListener {
 
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
         firebaseAuth.signInWithCredential(credential)
-                .addOnCompleteListener((Executor) this, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
@@ -117,8 +117,9 @@ public class SignIn extends Fragment implements View.OnClickListener {
                             FirebaseUser user = firebaseAuth.getCurrentUser();
                             Intent intent = new Intent(getActivity(), NavigationActivity.class);
                             startActivity(intent);
+                            getActivity().finish();
 
-                            Toast.makeText(getActivity(), getString(R.string.signin_successfull), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), getString(R.string.signin_successfull), Toast.LENGTH_LONG).show();
 
                         } else {
 
@@ -151,9 +152,9 @@ public class SignIn extends Fragment implements View.OnClickListener {
                         if (task.isSuccessful()) {
                             // Sign in success
                             FirebaseUser user = firebaseAuth.getCurrentUser();
-                           // getActivity().finish();
                             Intent intent = new Intent(getActivity(), NavigationActivity.class);
                             startActivity(intent);
+                            getActivity().finish();
 
                         } else {
                             // If sign in fails, message for user.

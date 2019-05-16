@@ -16,6 +16,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -33,18 +34,21 @@ public class ImageAdapter extends BaseAdapter {
     private StorageReference storageReference;
     private int PICK_IMAGE_REQUEST = 1;
     LoadImage li;
+    char parentFragment ;
+
 
     public interface LoadImage{
-        public void loadImageFunction(int position);
+        public void loadImageFunction(int position, char parent);
     }
 
 
 
-    public ImageAdapter(Context context, List<String> image, List<String>imageText) {
+    public ImageAdapter(Context context, char parentFragment, List<String> image, List<String>imageText) {
 
         this.context = context;
         this.image = image;
         this.imageText = imageText;
+        this.parentFragment = parentFragment;
 
         inflater = LayoutInflater.from(context);
     }
@@ -65,18 +69,14 @@ public class ImageAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, final ViewGroup parent) {
         View view = inflater.inflate(R.layout.gridview, null);
 
         ImageView imageView = view.findViewById(R.id.gridview_image);
-        //imageView.setImageResource(image.get(position));
-        //final String urlImage = "https://firebasestorage.googleapis.com/v0/b/keepsake-ffd69.appspot.com/o/photos%2F"+ image.get(position)+"?alt=media";
-        //https://firebasestorage.googleapis.com/v0/b/keepsake-ffd69.appspot.com/o/photos%2Fbaby.jpg?alt=media&token=8c9bb29a-1a70-41b4-87d1-0dbc9624a270
-        //https://firebasestorage.googleapis.com/v0/b/keepsake-ffd69.appspot.com/o/babymonth.jpg?alt=media&token=191e2d3b-b3b4-4cd0-9c8b-afaa6b463e1f
-       //GlideApp.with(context)
-        final String urlImage = "https://media.wired.com/photos/5a595516f11e325008172bcb/master/w_582,c_limit/BabyGlimpseBaby-640504936.jpg";
-        Glide.with(context)
-                .asBitmap()
+
+        final String urlImage = "https://firebasestorage.googleapis.com/v0/b/keepsake-ffd69.appspot.com/o/photos%2F"+ image.get(position)+"?alt=media";
+
+        Picasso.get()
                 .load(urlImage)
                 .into(imageView);
 
@@ -88,8 +88,8 @@ public class ImageAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
 
-              //  li = (LoadImage)context;
-               // li.loadImageFunction(position);
+               li = (LoadImage)context;
+               li.loadImageFunction(position, parentFragment);
 
             }
         });
