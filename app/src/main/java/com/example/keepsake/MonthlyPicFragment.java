@@ -73,9 +73,8 @@ public class MonthlyPicFragment extends Fragment {
 
         gridView = view.findViewById(R.id.grid_view_image_text);
 
-
-        if(!checkImage("m_0")){
-                image.add("babymonth.jpg");
+        if(!checkImage( "m_0")){
+                image.add(user.getEmail()+"babymonth.jpg");
 
         }else{
             image.add(user.getEmail()+"m_0");
@@ -103,6 +102,7 @@ public class MonthlyPicFragment extends Fragment {
             image.add(user.getEmail()+"m_3");
 
         }
+
         if(! checkImage("m_4")){
             image.add("babymonth.jpg");
 
@@ -110,7 +110,8 @@ public class MonthlyPicFragment extends Fragment {
             image.add(user.getEmail()+"m_4");
 
         }
-        if(! checkImage("m_5")){
+
+        if(! checkImage( "m_5")){
             image.add("babymonth.jpg");
 
         }else{
@@ -124,6 +125,7 @@ public class MonthlyPicFragment extends Fragment {
             image.add(user.getEmail()+"m_6");
 
         }
+
         if(! checkImage("m_7")){
             image.add("babymonth.jpg");
 
@@ -138,6 +140,7 @@ public class MonthlyPicFragment extends Fragment {
             image.add(user.getEmail()+"m_8");
 
         }
+
         if(! checkImage("m_9")){
             image.add("babymonth.jpg");
 
@@ -145,13 +148,7 @@ public class MonthlyPicFragment extends Fragment {
             image.add(user.getEmail()+"m_9");
 
         }
-        if(! checkImage("m_10")){
-            image.add("babymonth.jpg");
 
-        }else{
-            image.add(user.getEmail()+"m_1");
-
-        }
         if(! checkImage("m_10")){
             image.add("babymonth.jpg");
 
@@ -159,6 +156,7 @@ public class MonthlyPicFragment extends Fragment {
             image.add(user.getEmail()+"m_10");
 
         }
+
         if(! checkImage("m_11")){
             image.add("babymonth.jpg");
 
@@ -194,6 +192,7 @@ public class MonthlyPicFragment extends Fragment {
             Picasso.get()
                     .load(urlImage)
             ;
+
 
         }catch (Exception e){
             return false;
